@@ -32,7 +32,7 @@ jobs:
         id: download-windows
         uses: dsaltares/fetch-gh-release-asset@master
         with:
-          file: space-shotr.zip
+          file: space-shotr-win.zip
         env:
           GITHUB_TOKEN: "${{ secrets.GH_CREDENTIALS }}"
       - name: deploy to itch.io (HTML5)
@@ -42,5 +42,5 @@ jobs:
           CHANNEL: windows
           ITCH_GAME: space-shotr
           ITCH_USER: kerodekroma
-          PACKAGE: space-shotr.zip
+          PACKAGE: space-shotr-win.zip
           VERSION: ${{ steps.download-windows.outputs.version }}
